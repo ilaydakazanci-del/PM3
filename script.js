@@ -67,25 +67,3 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 
-// Finde die Schaltflächen und das Modal
-const auftragErstellenButton = document.getElementById('auftrag-erstellen-button');
-const popupModal = document.getElementById('popup-modal');
-const closeButton = document.getElementById('close-button');
-
-// Öffne das Popup, wenn der Button "Auftrag erstellen" geklickt wird
-auftragErstellenButton.addEventListener('click', function (event) {
-  event.preventDefault(); // Verhindere Standardaktion (Link-Weiterleitung)
-  popupModal.classList.remove('hidden'); // Zeige das Modal
-});
-
-// Schließe das Modal, wenn der "Schließen"-Button geklickt wird
-closeButton.addEventListener('click', function () {
-  popupModal.classList.add('hidden'); // Verstecke das Modal
-});
-
-// Optional: Schließe das Modal, wenn außerhalb geklickt wird
-window.addEventListener('click', function (event) {
-  if (event.target === popupModal) {
-    popupModal.classList.add('hidden');
-  }
-});
