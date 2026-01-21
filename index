@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HelpingHands — Handwerkliche Hilfe in deiner Nähe</title>
+  <meta name="description" content="HelpingHands vermittelt handwerkliche Kleinaufträge (Lampen anschließen, Löcher bohren u.v.m.). Auftrag erstellen, Handwerker finden, Termin & Bezahlung sicher abwickeln." />
+  <meta property="og:title" content="HelpingHands — Handwerkliche Hilfe in deiner Nähe" />
+  <meta property="og:description" content="Schnell, transparent, lokal: HelpingHands verbindet Auftraggeber und Handwerker. Buche einfach, bezahle sicher, wir nehmen eine faire Provision." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=HelpingHands" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Modal Standardstil */
+    .hidden {
+      display: none;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Dimm-Effekt */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+    }
+
+    #close-button {
+      margin-top: 10px;
+      display: inline-block;
+      border: none;
+      background-color: #d1d1d1;
+      color: black;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #close-button:hover {
+      background-color: #b0bec5;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand" aria-label="HelpingHands">
+        <span class="logo" id="brand-logo">HelpingHands</span>
+        <small class="tagline">Schnell. Lokal. Zuverlässig.</small>
+      </div>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Navigation ein-/ausblenden">☰</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">So funktioniert's</a></li>
+          <li><a href="#pricing">Preise</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="ctas">
+        <!-- Button für Auftrag erstellen -->
+        <a class="btn btn-primary" href="#" id="auftrag-erstellen-button">Auftrag erstellen</a>
+        <a class="btn btn-ghost" href="#für-handwerker">Für Handwerker</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>HelpingHands — Handwerkliche Hilfe in deiner Nähe</h1>
+          <p class="lead">Finde geprüfte Handwerker für kleine Alltagsaufgaben: Lampen anschließen, Löcher bohren, Regale montieren und mehr. Auftrag einstellen, Handwerker finden, Termin & Abrechnung sicher gestalten.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#" id="auftrag-erstellen-button-hero">Jetzt Auftrag einstellen</a>
+            <a class="btn btn-ghost" href="#how">Wie es funktioniert</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popup-Fenster HTML -->
+    <div id="popup-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal-content">
+        <h2 id="modal-title">Auftrag erstellen</h2>
+        <p>Bitte fülle das Formular aus, um einen Auftrag zu erstellen!</p>
+        <form id="auftrag-form">
+          <label for="task">Beschreibung der Aufgabe:</label>
+          <textarea id="task" name="task" rows="4" required></textarea>
+          <label for="date">Datum:</label>
+          <input type="date" id="date" name="date" required />
+          <label for="location">Ort:</label>
+          <input type="text" id="location" name="location" required />
+          <button type="submit" class="btn btn-primary">Absenden</button>
+        </form>
+        <button class="btn btn-ghost" id="close-button">Schließen</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong id="footer-company">HelpingHands</strong>
+        <p class="muted">© <span id="year"></span> HelpingHands </p>
+      </div>
+      <nav aria-label="Footer Navigation">
+        <ul class="footer-links">
+          <li><a href="/privacy">Datenschutz</a></li>
+          <li><a href="/terms">AGB</a></li>
+          <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  
+  <script>
+    // Finde die Schaltflächen und das Modal
+    const auftragErstellenButton = document.getElementById('auftrag-erstellen-button');
+    const popupModal = document.getElementById('popup-modal');
+    const closeButton = document.getElementById('close-button');
+
+    // Öffne das Popup, wenn der Button "Auftrag erstellen" geklickt wird
+    auftragErstellenButton.addEventListener('click', function (event) {
+      event.preventDefault(); // Verhindere Standardaktion (Link-Weiterleitung)
+      popupModal.classList.remove('hidden'); // Zeige das Modal
+    });
+
+    // Schließe das Modal, wenn der "Schließen"-Button geklickt wird
+    closeButton.addEventListener('click', function () {
+      popupModal.classList.add('hidden'); // Verstecke das Modal
+    });
+
+    // Optional: Schließe das Modal, wenn außerhalb geklickt wird
+    window.addEventListener('click', function (event) {
+      if (event.target === popupModal) {
+        popupModal.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
