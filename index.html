@@ -60,6 +60,43 @@
     </div>
   </header>
 
+  !-- Popup-Overlay -->
+    <div id="popup-overlay" class="popup-overlay hidden">
+      <div class="popup">
+        <button class="popup-close" aria-label="Popup schließen">✖</button>
+        <h2>Willkommen!</h2>
+        <p>Dieses Popup erscheint, wenn Sie das Feld klicken.</p>
+        <button class="btn btn-primary">Aktion ausführen</button>
+      </div>
+    </div>
+
+    <!-- Button zum Öffnen -->
+    <button id="open-popup" class="btn btn-primary">Popup anzeigen</button>
+  </main>
+  <footer>...</footer>
+  
+  <script>
+    // JavaScript für das Popup
+    const popupOverlay = document.getElementById('popup-overlay');
+    const openPopupButton = document.getElementById('open-popup');
+    const closePopupButton = document.querySelector('.popup-close');
+
+    openPopupButton.addEventListener('click', () => {
+      popupOverlay.classList.remove('hidden');
+    });
+
+    closePopupButton.addEventListener('click', () => {
+      popupOverlay.classList.add('hidden');
+    });
+
+    popupOverlay.addEventListener('click', (event) => {
+      if (event.target === popupOverlay) {
+        popupOverlay.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+
   <main id="main">
     <section class="hero">
       <div class="container hero-inner">
