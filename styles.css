@@ -101,7 +101,7 @@ body{
 .brand{display:flex;flex-direction:column;gap:4px}
 .brand .logo{font-weight:700;font-size:20px;color:var(--accent)}
 .brand img {
-  max-height: 100px; /* Höhe des Logos */
+  max-height: 200px; /* Höhe des Logos */
   width: auto; /* Beibehaltung des Seitenverhältnisses */
 }
 .brand .tagline{display:block;font-size:12px;color:var(--muted)}
