@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HelpingHands — Handwerkliche Hilfe in deiner Nähe</title>
+  <meta name="description" content="HelpingHands vermittelt handwerkliche Kleinaufträge (Lampen anschließen, Löcher bohren u.v.m.). Auftrag erstellen, Handwerker/in finden, Termin & Bezahlung sicher abwickeln." />
+  <meta property="og:title" content="HelpingHands — Handwerkliche Hilfe in deiner Nähe" />
+  <meta property="og:description" content="Schnell, transparent, lokal: HelpingHands verbindet Auftraggeber und Handwerker/innen. Buche einfach, bezahle sicher, wir nehmen eine faire Provision." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=HelpingHands" />
+  <!-- Branding-Konfiguration: Einfach hier die Farben / Logo ändern -->
+  <script>
+    (function(){
+      // EDITIERE HIER dein CI-Set
+      const BRAND = {
+        primary: '#b0e2ff',      // Primärfarbe (Hex)
+        secondary: '#d1d1d1',    // Sekundärfarbe (Hex) optional
+        logoUrl: https://github.com/ilaydakazanci-del/PM3/blob/d3b7f7777725291a5bb6fd7594924736235b53a8/Simple%20Flat%20Vector%20HelpingHands%20Logo.png             // Beispiel: 'https://example.com/logo.png' -> leer = Text-Logo
+        companyName: 'HelpingHands' // Firmenname (wird verwendet, wenn kein LogoUrl gesetzt)
+      };
+      // Globale Verfügbarkeit
+      window.BRAND = BRAND;
+      // Über CSS-Variablen sofort anwenden (Stylesheet verwendet --accent, --accent-2)
+      document.documentElement.style.setProperty('--accent', BRAND.primary);
+      document.documentElement.style.setProperty('--accent-2', BRAND.secondary);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand" aria-label="HelpingHands">
+        <!-- Logo-Platzhalter: wird durch script.js ersetzt, wenn BRAND.logoUrl gesetzt ist -->
+        <img src="Simple Flat Vector HelpingHands Logo 2.png"
+        <small class="tagline">Schnell. Lokal. Zuverlässig.</small>
+      </div>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Navigation ein-/ausblenden">☰</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">So funktioniert's</a></li>
+          <li><a href="#pricing">Preise</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="ctas">
+        <a class="btn btn-primary" href="mailto:kontakt@helpinghands.example?subject=Auftrag%20erstellen">Auftrag erstellen</a>
+        <a class="btn btn-ghost" href="#für-handwerker">Für Handwerker/innen</a>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>HelpingHands — Handwerkliche Hilfe in deiner Nähe</h1>
+          <p class="lead">Finde geprüfte Handwerker/innen für kleine Alltagsaufgaben: Lampen anschließen, Löcher bohren, Regale montieren und mehr. Auftrag einstellen, Handwerker/in finden, Termin & Abrechnung sicher über HelpingHands.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:kontakt@helpinghands.example?subject=Auftrag%20erstellen">Jetzt Auftrag einstellen</a>
+            <a class="btn btn-ghost" href="#how">Wie es funktioniert</a>
+          </div>
+         
+        </div>
+        <div class="hero-media" role="region" aria-label="Pitch-Video">
+          <div class="video-wrap" id="video">
+            <!-- Falls du ein Pitch-Video hast: data-src mit dem Embed-Link setzen -->
+            <div class="video-iframe" data-src="<div style="padding:80% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1157943545?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Screen_HelpingHands"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="how" class="container how">
+      <h2>Wie HelpingHands funktioniert</h2>
+      <ol class="steps">
+        <li><strong>Auftrag einstellen:</strong> Beschreibe die Aufgabe, Ort und gewünschtes Zeitfenster.</li>
+        <li><strong>Handwerker/innen melden sich:</strong> Interessierte Dienstleister bieten an oder kontaktieren dich.</li>
+        <li><strong>Buchen & Bezahlen:</strong> Termin vereinbaren, Zahlung über HelpingHands (wir ziehen provisionsbasiert ab).</li>
+        <li><strong>Durchführung & Bewertung:</strong> Aufgabe erledigt → Bewertung stärkt Vertrauen im Netzwerk.</li>
+      </ol>
+    </section>
+    <section id="features" class="features container">
+      <h2>Wichtige Funktionen für Auftraggeber & Handwerker</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Schnell inserieren</h3>
+          <p>In wenigen Schritten einen Auftrag einstellen — mit Foto, Beschreibung und Preisrahmen.</p>
+        </article>
+        <article class="card">
+          <h3>Matching & Kommunikation</h3>
+          <p>Echtes Matching lokaler Dienstleister + In-App-Nachrichten für Details & Verfügbarkeiten.</p>
+        </article>
+        <article class="card">
+          <h3>Sichere Abrechnung</h3>
+          <p>Zahlungen werden sicher über die Plattform abgewickelt; HelpingHands erhält eine Provision pro Buchung.</p>
+        </article>
+        <article class="card">
+          <h3>Vertrauen & Qualität</h3>
+          <p>Profile, Bewertungen und Verifizierungen machen die Auswahl transparent und sicher.</p>
+        </article>
+      </div>
+    </section>
+    <section id="pricing" class="container pricing">
+      <h2>Preismodell & Provision</h2>
+      <p class="muted">Ein einfaches Provisionsmodell während der Pilotphase:</p>
+      <ul class="feature-list">
+        <li><strong>Auftraggeber:</strong> Keine Einstellgebühr in der Pilotphase</li>
+        <li><strong>Handwerker:</strong> Faire Vermittlungsprovision (10–15%) pro erfolgreicher Buchung je nach Umfang des Auftrages</li>
+        <li><strong>Sicherheit:</strong> Gebührenabrechnung erfolgt transparent bei Abschluss</li>
+      </ul>
+    </section>
+    <section class="testimonials container" aria-label="Kundenstimmen">
+      <h2>Erste Rückmeldungen </h2>
+      <blockquote>
+        „Ohne Probleme eine passende und freundliche Handwerkerin gefunden.“<cite> Pilotkundin, Sarah Schäfer </cite>
+      </blockquote>
+      <blockquote>
+        „Nach meinem Einzug habe ich dringend Hilfe gebraucht, die habe ich hier schnell bekommen.“<cite> Pilotkunde, Jan-Luca Bach </cite>
+      </blockquote>
+    </section>
+
+    <section id="für-handwerker/innen" class="container vendors">
+      <h2>Handwerker/in werden</h2>
+      <p>Du fragst dich, wie du dich als Handwerker/in bei uns registrieren kannst? Über den Button kannst du einen Termin buchen und wir besprechen, welche Dienstleistungen du anbieten kannst und erstellen zusammen dein Profil.  
+        Nach dem dein Profil auf der Website aktiv ist, kannst du lokale Aufträge erhalten. Ideal für Personen mit handwerklichem Geschick!.</p>
+
+    
+          
+            
+    
+
+          
+          Expand Down
+    
+    
+  
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="https://calendly.com/ilaydakazanci/30min">Termin buchen und als Handwerker/in registrieren!</a>
+        
+      </div>
+    </section>
+    
+      <aside class="note">
+        
+      </aside>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong id="footer-company">HelpingHands</strong>
+        <p class="muted">© <span id="year"></span> HelpingHands </p>
+      </div>
+      <nav aria-label="Footer Navigation">
+        <ul class="footer-links">
+          <li><a href="/privacy">Datenschutz</a></li>
+          <li><a href="/terms">AGB</a></li>
+          <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
